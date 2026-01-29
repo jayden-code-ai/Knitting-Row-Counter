@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Knitting Project List (Text-focused Cozy)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec6d13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181411] dark:text-[#f8f7f6] min-h-screen flex flex-col">
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+</div>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight">KnitCount</h1>
+<div class="flex items-center gap-1">
+<button class="size-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</nav>
+<header class="px-6 pt-6 pb-2">
+<h2 class="text-3xl font-extrabold leading-tight">My Projects</h2>
+<p class="text-[#897261] dark:text-[#d1c3ba] mt-1">Keep track of your cozy creations</p>
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-32">
+<div class="mt-4">
+<div class="group relative flex flex-col items-stretch justify-start rounded-xl overflow-hidden shadow-sm bg-white dark:bg-[#2d221a] border border-[#eee6e0] dark:border-[#3d3128] p-5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-extrabold tracking-tight">Autumn Cable Sweater</h3>
+<p class="text-[#897261] dark:text-[#d1c3ba] text-sm font-medium">Last edited 2 hours ago</p>
+</div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="flex items-center justify-between bg-background-light dark:bg-[#221810] p-5 rounded-lg mb-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Row Counter</span>
+<span class="text-5xl font-black text-primary">42</span>
+</div>
+<div class="h-12 w-[1px] bg-[#eee6e0] dark:bg-[#3d3128]"></div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Set Status</span>
+<span class="text-2xl font-bold">3 <span class="text-[#897261] font-medium text-sm">of 10</span></span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Increment Row</span>
+</button>
+</div>
+</div>
+<div class="mt-6">
+<div class="group relative flex flex-col items-stretch justify-start rounded-xl overflow-hidden shadow-sm bg-white dark:bg-[#2d221a] border border-[#eee6e0] dark:border-[#3d3128] p-5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-extrabold tracking-tight">Pastel Baby Blanket</h3>
+<p class="text-[#897261] dark:text-[#d1c3ba] text-sm font-medium">Last edited yesterday</p>
+</div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Gift</span>
+</div>
+<div class="flex items-center justify-between bg-background-light dark:bg-[#221810] p-5 rounded-lg mb-4">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Row Counter</span>
+<span class="text-5xl font-black text-primary">128</span>
+</div>
+<div class="h-12 w-[1px] bg-[#eee6e0] dark:bg-[#3d3128]"></div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Progress</span>
+<span class="text-2xl font-bold">85%</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Increment Row</span>
+</button>
+</div>
+</div>
+<div class="mt-6">
+<div class="group relative flex flex-col items-stretch justify-start rounded-xl overflow-hidden shadow-sm bg-white dark:bg-[#2d221a] border border-[#eee6e0] dark:border-[#3d3128] p-5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-extrabold tracking-tight">Chunky Winter Scarf</h3>
+<p class="text-[#897261] dark:text-[#d1c3ba] text-sm font-medium">Last edited 3 days ago</p>
+</div>
+<span class="bg-[#eee6e0] dark:bg-[#3d3128] text-[#897261] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Draft</span>
+</div>
+<div class="flex items-center justify-between bg-background-light dark:bg-[#221810] p-5 rounded-lg mb-4 opacity-80">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Row Counter</span>
+<span class="text-5xl font-black text-primary">15</span>
+</div>
+<div class="h-12 w-[1px] bg-[#eee6e0] dark:bg-[#3d3128]"></div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-[#897261] uppercase tracking-widest">Set Status</span>
+<span class="text-2xl font-bold">2 <span class="text-[#897261] font-medium text-sm">of 5</span></span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Increment Row</span>
+</button>
+</div>
+</div>
+</main>
+<div class="fixed bottom-24 right-6 z-40">
+<button class="size-16 bg-primary text-white rounded-full flex items-center justify-center shadow-[0_8px_30px_rgb(236,109,19,0.4)] transition-transform active:scale-90 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-symbols-outlined text-4xl">add</span>
+</button>
+</div>
+<footer class="fixed bottom-0 w-full bg-white/90 dark:bg-[#2d221a]/90 backdrop-blur-xl border-t border-[#eee6e0] dark:border-[#3d3128] px-6 py-4 z-50">
+<div class="flex items-center justify-around max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Projects</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#897261] dark:text-[#d1c3ba] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">local_library</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Library</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#897261] dark:text-[#d1c3ba] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">timer</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Timer</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#897261] dark:text-[#d1c3ba] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Stats</span>
+</button>
+</div>
+</footer>
+
+</body></html>

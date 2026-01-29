@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Large Zone Stitch Counter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec6d13",
+                        "background-light": "#fdfaf7",
+                        "knit-beige": "#f5ece3",
+                        "knit-dark": "#2d221a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .knit-texture {
+                background-color: #f5ece3;
+                background-image: radial-gradient(#e6d5c3 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
+            .dark .knit-texture {
+                background-color: #221810;
+                background-image: radial-gradient(#3d3128 1px, transparent 1px);
+                background-size: 20px 20px;
+            }
+            .no-tap-highlight {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181411] dark:text-[#f8f7f6] h-screen overflow-hidden select-none touch-none">
+<div class="knit-texture fixed inset-0 opacity-40"></div>
+<div class="relative h-screen w-full flex flex-col z-10">
+<header class="pt-12 px-6 flex justify-between items-center w-full absolute top-0">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase tracking-[0.2em]">Now Knitting</span>
+<h2 class="text-xl font-extrabold tracking-tight">Autumn Cable Sweater</h2>
+</div>
+<button class="size-10 rounded-full bg-white/50 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center border border-[#eee6e0] dark:border-[#3d3128]">
+<span class="material-symbols-outlined text-xl">more_horiz</span>
+</button>
+</header>
+<button class="flex-1 w-full flex items-center justify-center no-tap-highlight active:bg-black/[0.02] dark:active:bg-white/[0.02] transition-colors relative group">
+<div class="absolute inset-x-12 top-1/3 border-t border-[#897261]/10 flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-[#897261]/20 mt-4 group-active:text-primary group-active:scale-110 transition-all">expand_less</span>
+<span class="text-[10px] font-bold text-[#897261]/30 uppercase tracking-[0.3em] mt-1">Tap Top to Increment</span>
+</div>
+</button>
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center">
+<div class="flex flex-col items-center text-center drop-shadow-sm">
+<div class="bg-white/40 dark:bg-white/5 backdrop-blur-xl px-10 py-12 rounded-[3rem] border border-white/60 dark:border-white/10 shadow-2xl shadow-primary/5">
+<span class="text-xs font-extrabold text-[#897261] dark:text-[#d1c3ba] uppercase tracking-[0.4em] block mb-2">Current Row</span>
+<span class="text-[120px] font-black leading-none text-primary tabular-nums">42</span>
+<div class="mt-8 flex items-center gap-4 bg-primary/10 px-6 py-2 rounded-full border border-primary/20">
+<span class="text-sm font-extrabold text-[#897261] dark:text-[#d1c3ba] uppercase tracking-widest">Set</span>
+<div class="h-4 w-[1px] bg-primary/30"></div>
+<span class="text-xl font-black text-primary">3 <span class="text-xs font-bold text-[#897261] dark:text-[#d1c3ba]">of 10</span></span>
+</div>
+</div>
+</div>
+</div>
+<button class="flex-1 w-full flex items-center justify-center no-tap-highlight active:bg-black/[0.02] dark:active:bg-white/[0.02] transition-colors relative group">
+<div class="absolute inset-x-12 bottom-1/4 border-b border-[#897261]/10 flex flex-col items-center">
+<span class="text-[10px] font-bold text-[#897261]/30 uppercase tracking-[0.3em] mb-1">Tap Bottom to Decrement</span>
+<span class="material-symbols-outlined text-4xl text-[#897261]/20 mb-4 group-active:text-[#897261] group-active:scale-110 transition-all">expand_more</span>
+</div>
+</button>
+<footer class="absolute bottom-0 w-full px-6 pb-10 flex items-center justify-between">
+<button class="flex items-center gap-2 px-6 py-3 bg-white dark:bg-[#2d221a] rounded-full shadow-lg border border-[#eee6e0] dark:border-[#3d3128] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-xl">arrow_back_ios_new</span>
+<span class="text-sm font-bold">Back to Projects</span>
+</button>
+<div class="flex gap-2">
+<button class="size-12 bg-white dark:bg-[#2d221a] rounded-full flex items-center justify-center shadow-lg border border-[#eee6e0] dark:border-[#3d3128] active:scale-95 transition-transform">
+<span class="material-symbols-outlined">restart_alt</span>
+</button>
+<button class="size-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</footer>
+</div>
+<div class="fixed inset-0 pointer-events-none flex flex-col justify-between p-8 opacity-40">
+<div class="h-1 w-full bg-gradient-to-r from-transparent via-[#897261]/20 to-transparent"></div>
+<div class="h-1 w-full bg-gradient-to-r from-transparent via-[#897261]/20 to-transparent"></div>
+</div>
+
+</body></html>

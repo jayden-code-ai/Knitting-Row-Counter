@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>니트카운트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="home-view" class="view is-active">
+        <nav class="top-nav">
+          <div class="nav-title">니트카운트</div>
+        </nav>
+
+        <header class="page-header">
+          <h1>내 프로젝트</h1>
+          <p>따뜻한 작품들을 기록하세요</p>
+        </header>
+
+        <main id="project-list" class="project-list"></main>
+
+        <button id="add-project-fab" class="fab" type="button">
+          <span class="material-symbols-outlined">add</span>
+        </button>
+      </section>
+
+      <section id="count-view" class="view">
+        <div class="knit-texture"></div>
+        <header class="count-header">
+          <div>
+            <span class="label">지금 뜨는 중</span>
+            <h2 id="count-project-title">프로젝트</h2>
+          </div>
+        </header>
+
+        <div class="count-body">
+          <button class="tap-zone tap-zone--top" id="tap-inc" type="button">
+            <div class="tap-hint">위쪽 영역 터치 - 증가</div>
+            <span class="material-symbols-outlined">expand_less</span>
+          </button>
+
+          <div class="count-card">
+            <span class="label">현재 단수</span>
+            <div class="count-value" id="row-value">0</div>
+            <div class="set-pill">
+              <span class="pill-label">세트</span>
+              <span class="divider"></span>
+              <span class="pill-value" id="set-value">0</span>
+              <span class="pill-sub" id="set-target">/ 0</span>
+            </div>
+          </div>
+
+          <button class="tap-zone tap-zone--bottom" id="tap-dec" type="button">
+            <div class="tap-hint">아래쪽 영역 터치 - 감소</div>
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+        </div>
+
+        <footer class="count-footer">
+          <button id="back-home" class="back-btn" type="button">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+            프로젝트 목록
+          </button>
+          <div class="footer-actions">
+            <button id="home-button" class="icon-btn" type="button">
+              <span class="material-symbols-outlined">home</span>
+            </button>
+            <button id="reset-count" class="icon-btn" type="button">
+              <span class="material-symbols-outlined">restart_alt</span>
+            </button>
+            <button id="edit-settings" class="icon-btn icon-btn--primary" type="button">
+              <span class="material-symbols-outlined">edit</span>
+            </button>
+          </div>
+        </footer>
+      </section>
+    </div>
+
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+
+    <div id="add-modal" class="modal">
+      <div class="modal-header">
+        <h3>프로젝트 추가</h3>
+        <button class="icon-btn" type="button" data-close="add-modal">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="add-form" class="modal-body">
+        <label>
+          프로젝트 이름
+          <input type="text" name="name" placeholder="예: 가을 케이블 스웨터" required />
+        </label>
+        <label>
+          상태
+          <select name="status">
+            <option value="진행중">진행중</option>
+            <option value="보류중">보류중</option>
+            <option value="완료함">완료함</option>
+          </select>
+        </label>
+        <label>
+          세트당 단수
+          <input type="number" name="rowsPerSet" min="1" max="999" value="15" />
+        </label>
+        <label>
+          목표 세트 수 (선택)
+          <input type="number" name="targetSets" min="0" max="999" value="0" />
+        </label>
+        <label>
+          증감 단위 (1~20)
+          <input type="range" name="step" min="1" max="20" value="1" />
+        </label>
+        <div class="range-value" id="add-step-value">1</div>
+        <label>
+          레퍼런스 사진
+          <input type="file" name="refImage" accept="image/*" />
+        </label>
+        <div class="image-preview" id="add-ref-preview">
+          <div class="image-empty">선택된 사진 없음</div>
+          <img id="add-ref-img" alt="레퍼런스 미리보기" />
+          <button type="button" class="image-clear" data-clear="add-ref">삭제</button>
+        </div>
+        <label>
+          완료 사진
+          <input type="file" name="doneImage" accept="image/*" />
+        </label>
+        <div class="image-preview" id="add-done-preview">
+          <div class="image-empty">선택된 사진 없음</div>
+          <img id="add-done-img" alt="완료 사진 미리보기" />
+          <button type="button" class="image-clear" data-clear="add-done">삭제</button>
+        </div>
+        <button class="primary-btn" type="submit">추가</button>
+      </form>
+    </div>
+
+    <div id="settings-modal" class="modal">
+      <div class="modal-header">
+        <h3>설정</h3>
+        <button class="icon-btn" type="button" data-close="settings-modal">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <form id="settings-form" class="modal-body">
+        <label>
+          상태
+          <select name="status">
+            <option value="진행중">진행중</option>
+            <option value="보류중">보류중</option>
+            <option value="완료함">완료함</option>
+          </select>
+        </label>
+        <label>
+          세트당 단수
+          <input type="number" name="rowsPerSet" min="1" max="999" />
+        </label>
+        <label>
+          목표 세트 수 (선택)
+          <input type="number" name="targetSets" min="0" max="999" />
+        </label>
+        <label>
+          증감 단위 (1~20)
+          <input type="range" name="step" min="1" max="20" />
+        </label>
+        <div class="range-value" id="settings-step-value">1</div>
+        <label>
+          메모
+          <textarea name="memo" rows="3" placeholder="도안/바늘 정보"></textarea>
+        </label>
+        <label>
+          레퍼런스 사진
+          <input type="file" name="refImage" accept="image/*" />
+        </label>
+        <div class="image-preview" id="settings-ref-preview">
+          <div class="image-empty">선택된 사진 없음</div>
+          <img id="settings-ref-img" alt="레퍼런스 미리보기" />
+          <button type="button" class="image-clear" data-clear="settings-ref">삭제</button>
+        </div>
+        <label>
+          완료 사진
+          <input type="file" name="doneImage" accept="image/*" />
+        </label>
+        <div class="image-preview" id="settings-done-preview">
+          <div class="image-empty">선택된 사진 없음</div>
+          <img id="settings-done-img" alt="완료 사진 미리보기" />
+          <button type="button" class="image-clear" data-clear="settings-done">삭제</button>
+        </div>
+        <button class="primary-btn" type="submit">저장</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
