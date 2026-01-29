@@ -270,11 +270,13 @@ function handleTap(delta) {
 function openModal(modal) {
   modal.classList.add("is-open");
   backdrop.classList.add("is-open");
+  document.body.classList.add("modal-open");
 }
 
 function closeModal(modal) {
   modal.classList.remove("is-open");
   backdrop.classList.remove("is-open");
+  document.body.classList.remove("modal-open");
 }
 
 addFab.addEventListener("click", () => openModal(addModal));

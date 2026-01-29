@@ -25,6 +25,10 @@ body {
   min-height: 100%;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 button,
 input,
 textarea {
@@ -452,13 +456,16 @@ textarea {
 
 .modal {
   position: fixed;
-  inset: auto 16px 24px;
+  inset: 16px 16px calc(16px + env(safe-area-inset-bottom));
   background: white;
   border-radius: 20px;
   padding: 16px;
   box-shadow: var(--shadow);
   display: none;
   z-index: 30;
+  overflow: auto;
+  max-height: calc(100vh - 32px);
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal.is-open,
